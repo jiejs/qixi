@@ -52,9 +52,9 @@ $(function(){
 			$('.yj_text_button').on('click',function(){})
 			setInterval(function(){
 				var random = parseInt(Math.random()*11+1)
-				var random1 = parseInt(Math.random()*11+1)
+				var random1 = parseInt(Math.random()*8+1)
 				var top = random1*10+10+"%"
-				var left = random*160+80+"px"
+				var left = random*180+80+"px"
 				$('.words'+random).css({'top':top,"left":left})
 				$('.words'+random).fadeIn(1500)
 				$('.yj_words').fadeOut(2000)
