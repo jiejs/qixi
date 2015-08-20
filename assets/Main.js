@@ -219,8 +219,8 @@ function createInstructions() {
 
 	text = document.createElement( 'div' );
 	text.onSelectStart = null;
-	var yj_random = parseInt(Math.random()*4+1)
-	text.innerHTML = '<div id="yj_ball"><img src="image/psba'+yj_random+'.jpg" style="border-radius:50%;width:200px;height:200px;margin-left: -95px;margin-top: -89px;"></div>';
+	var yj_random = parseInt(Math.random()*8+1)
+	text.innerHTML = '<div id="yj_ball"><img src="image/psba'+yj_random+'.jpg" style="border-radius:50%;width:235px;height:235px;margin-left: 5px;margin-top: -14px;"></div>';
 	text.style.color = theme[1];
 	text.style.position = 'absolute';
 	text.style.left = '0px';

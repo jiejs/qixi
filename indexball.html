@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
+    <title>qixi</title>
+<style type="text/css">
+body{font-family:"微软雅黑",Arial,Helvetica,sans-serif;background:url(image/psb4.jpg) repeat;margin: 0px;padding: 0px;}
+.yj_bc{position:absolute;z-index: 2;background-color: red;opacity: 0.2; width: 100%;height: 100%;}
+
+body {
+		overflow: hidden;
+		background-color: #000000;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		-ms-user-select: none;
+	}
+
+</style>
+</head>
+<body>
+<div class="yj_bc"></div>
+<div id="canvas"></div>
+<script src="assets/protoclass.js"></script>
+<script src='assets/box2d.js'></script>
+<script src='assets/Main.js'></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	(function(){
+		function changeBk(){
+			var random = parseInt(Math.random()*9+1)
+			$(document.body).css("background","url(image/psb"+random+".jpg) repeat")
+		}
+		setInterval(changeBk,8000)
+	})()
+})
+</script>
+<audio id="myaudio" src="image/musicball.mp3" controls="controls" loop="false" hidden="true" autoplay="true"></audio>
+</body>
+</html>

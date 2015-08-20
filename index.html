@@ -6,25 +6,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
     <title>qixi</title>
 <style type="text/css">
-body {
-		overflow: hidden;
-		background-color: #000000;
-		user-select: none;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-o-user-select: none;
-		-ms-user-select: none;
-	}
-body{font-family:"微软雅黑",Arial,Helvetica,sans-serif;background:url(image/psb4.jpg) repeat;margin: 0px;}
+body{font-family:"微软雅黑",Arial,Helvetica,sans-serif;background:url(image/psb2.jpg) no-repeat;margin: 0px;padding: 0px;-moz-background-size:cover;-ms-background-size:cover;-webkit-background-size:cover;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src=images/bg.png,sizingMethod=scale);}
+ul{margin: 0px;padding: 0px;}
+li{margin: 0px;padding: 0px;}
 .yj_bc{position:absolute;z-index: 2;background-color: red;opacity: 0.2; width: 100%;height: 100%;}
 .yj_title{width: 100%;font-size: 62px;color: white;text-align: center;}
-.yj_text_button{width: 125px;height: 50px;background-color: black;margin-left: 46%;font-size: 32px;margin-top: 10px;border-radius: 10px;
-}
+.yj_text_button{width: 125px;height: 50px;background-color: black;margin-left: 46%;font-size: 32px;margin-top: 10px;border-radius: 10px;}
 li{list-style:none}
 
 .girl img{width: 300px;height: 300px;position: absolute;top: 32%;left: 43%;border-radius: 50%;display: none;}
-
 .yj_down{margin-left: 23%;}
+.yj_words{padding: 10px;font-size: 30px;background-color: rgb(244, 205, 245);display: inline;border-radius: 10px;position: absolute;top: 42%;left: 40px;display: none;color: rgb(14, 242, 242);}
+
 .content{
   display:inline-block;
   width:350px;
@@ -48,47 +41,54 @@ div>div>div>div{
   margin:2px;
 }
 </style>
-<!-- <link rel="stylesheet" href="http://dreamsky.github.io/main/blog/common/init.css"> -->
 </head>
 <body>
-<div id="canvas"></div>
-<script src="assets/protoclass.js"></script>
-<script src='assets/box2d.js'></script>
-<script src='assets/Main.js'></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<!-- <script src="http://dreamsky.github.io/main/blog/common/init.js"></script> -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
 	(function(){
-		$('.top-banner').hide()
 		function img(){
-			$('.yj_down,.yj_text,.yj_text_button').fadeOut('slow')
-		}
+			$('.yj_down,.yj_text').fadeOut('slow')
+			$('.yj_text_button').on('click',function(){})
+			setInterval(function(){
+				var random = parseInt(Math.random()*11+1)
+				var random1 = parseInt(Math.random()*8+1)
+				var top = random1*10+10+"%"
+				var left = random*60+50+"px"
+				$('.words'+random).css({'top':top,"left":left})
+				$('.words'+random).fadeIn(1500)
+				$('.yj_words').fadeOut(2000)
+			},4000)
+			setTimeout(function(){
+				$('.yj_text_button').on('click',function(){
+					window.location.href='indexball.html'
+				})
+			},40000)
+		};
 		function animate(){
-			$('div>div>div>div').each(function(id){
-				$(this).css({
+		$('div>div>div>div').each(function(id){
+			$(this).css({
 				position: 'relative',
-				top: '-100px',
+				top: '-200px',
 				opacity: 0
 			});
 			var wait = Math.floor((Math.random()*4000)+1);
 			$(this).delay(wait).animate({
-				top: '400px',
+				top: '300px',
 				opacity: 1
-				},2000);
+				},1000);
 			});
-		}
+		};
 		function changeBk(){
 			var random = parseInt(Math.random()*9+1)
 			$(document.body).css("background","url(image/psb"+random+".jpg) repeat")
-		}
-		var change_bk = setInterval(changeBk,8000)
+		};
+		setInterval(changeBk,8000)
 		$('.yj_down').hide()
 		$('.yj_text_button').on('click',function(){
 			var value = $.trim($('.yj_text').val())
 			if(value==""){
-				alert("认真点好不好")
+				alert("认真点好不好!")
 			}else if(value=="我爱你"){
 				$('.yj_down').show()
 				animate();
@@ -112,8 +112,18 @@ $(function(){
 		<input class="yj_text" type="text" style="width: 300px;height: 50px; color:green;font-size: 32px;" placeholder="猜一猜密码">
 		<div class="yj_text_button">>_<</div>
 	</div>
-	<!-- <img src="image/psb1.jpg"/> -->
 </div>
+<div class="yj_words words1">今年的七夕有你>_<</div>
+<div class="yj_words words2">小慧喵喵</div>
+<div class="yj_words words3">七夕快乐</div>
+<div class="yj_words words4">生命的年轮有你我的印记</div>
+<div class="yj_words words5">我负责赚钱养家</div>
+<div class="yj_words words6">你负责美貌如花</div>
+<div class="yj_words words7">爱相随</div>
+<div class="yj_words words8">有你，一切开启</div>
+<div class="yj_words words9">开心</div>
+<div class="yj_words words10">美丽</div>
+<div class="yj_words words11">幸福</div>
 <div class="yj_down">
 <div class='content'>
 	<div style='padding-right:10px'>
@@ -270,7 +280,7 @@ $(function(){
 		</div>
 		<div style='padding-right:10px'>
 			<div style='margin-right:162px'></div>
-		</div>
+		</div>	
 		<div style='padding-right:10px'>
 			<div style='margin-right:162px'></div>
 		</div>
